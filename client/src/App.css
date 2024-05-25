@@ -1,9 +1,15 @@
 
+*{
+    box-sizing: border-box;
+}
+
+
 html{
     scroll-behavior: smooth;
 }
 body{
     color: #222;
+    
 }
 
 img{
@@ -77,6 +83,49 @@ div.post p.post-summary{
     line-height: 1.4rem;
 }
 
+
+/*  REGISTER AND LOGIN FORM Styles */
+
+form.login, form.register{
+
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+
+input{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px 7px;
+    border: 0;
+    color: white;
+    background-color: rgb(23, 23, 23);
+    border-radius: 2px;
+    
+
+}
+
+button{
+    width: 100%;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px black;
+    padding: 9px 0px;
+}
+::placeholder{
+    color: whitesmoke;
+    text-transform: capitalize;
+}
+
+form h1{
+    text-align: left;
+    text-decoration-line: underline;
+    text-decoration-thickness: 8px;
+    text-decoration-color: rgb(255, 64, 0);
+    text-underline-offset: 10px;
+    margin-bottom: 40px;
+}
 
 /* responsive */
 @media only screen and (max-width: 682px){
