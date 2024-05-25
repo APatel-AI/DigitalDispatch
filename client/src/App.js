@@ -14,6 +14,11 @@ function App() {
 
         </nav>
       </header>
+
+      <div className='entry'>
+        <img src="/">
+        </img>
+      </div>
     </main>
   );
 }
