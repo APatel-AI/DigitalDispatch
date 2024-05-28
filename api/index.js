@@ -9,6 +9,12 @@ const salt = bcrypt.genSaltSync(10);
 const secret = "cwfkjhdjkhf";
 const jwt = require("jsonwebtoken");
 
+dotenv.config();
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((err) => console.error("Could not connect to MongoDB", err));
+
 mongoose.connect(process.env.MONGO_URL);
 console.log(process.env.MONGO_URL);
 
@@ -47,7 +53,7 @@ app.post('/login', async (req,res) => {
     res.status(400).json('wrong credentials');
   }
 });
-app.listen('https://digital-dispatch.vercel.app');
+app.listen(4000);
 
 // if (response.status === 200) {
 //   toast.success('Successfully created!');
