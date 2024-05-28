@@ -9,16 +9,10 @@ const salt = bcrypt.genSaltSync(10);
 const secret = "cwfkjhdjkhf";
 const jwt = require("jsonwebtoken");
 
-dotenv.config();
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.error("Could not connect to MongoDB", err));
-
 mongoose.connect(process.env.MONGO_URL);
 console.log(process.env.MONGO_URL);
 
-app.use(cors({ credentials: true, origin: "https://digital-dispatch.vercel.app" }));
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
 app.use(express.json());
 
