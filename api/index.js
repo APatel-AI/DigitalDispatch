@@ -12,7 +12,7 @@ const jwt = require("jsonwebtoken");
 mongoose.connect(process.env.MONGO_URL);
 console.log(process.env.MONGO_URL);
 
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://digital-dispatch.vercel.app" }));
 
 app.use(express.json());
 
