@@ -47,7 +47,7 @@ app.post('/login', async (req,res) => {
     res.status(400).json('wrong credentials');
   }
 });
-app.listen(4000);
+app.listen('https://digital-dispatch.vercel.app');
 
 // if (response.status === 200) {
 //   toast.success('Successfully created!');
