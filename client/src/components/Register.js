@@ -8,7 +8,7 @@ const Register = () => {
   async function registerUser(ev) {
     ev.preventDefault();
 
-    const response = await fetch("https://digital-dispatch-8bo6cnxnl-apatelais-projects.vercel.app/register", {
+    const response = await fetch("https://digital-dispatch.vercel.app/register", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
