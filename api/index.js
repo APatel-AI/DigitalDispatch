@@ -15,7 +15,7 @@ console.log(process.env.MONGO_URL);
 app.use(
   cors({
     credentials: true,
-    origin: "http://digital-dispatch.vercel.app",
+    origin: "https://digital-dispatch.vercel.app",
     
   })
 );
