@@ -12,7 +12,12 @@ const jwt = require("jsonwebtoken");
 mongoose.connect(process.env.MONGO_URL);
 console.log(process.env.MONGO_URL);
 
-app.use(cors({ credentials: true, origin: "https://digital-dispatch-8bo6cnxnl-apatelais-projects.vercel.app" }));
+app.use(
+  cors({
+    origin: "https://digital-dispatch-8bo6cnxnl-apatelais-projects.vercel.app",
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
@@ -30,21 +35,21 @@ app.post("/register", async (req, res) => {
   }
 });
 
-app.post('/login', async (req,res) => {
-  const {username,password} = req.body;
-  const userDoc = await User.findOne({username});
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  const userDoc = await User.findOne({ username });
   const passOk = bcrypt.compareSync(password, userDoc.password);
   if (passOk) {
     // logged in
-    jwt.sign({username,id:userDoc._id}, secret, {}, (err,token) => {
+    jwt.sign({ username, id: userDoc._id }, secret, {}, (err, token) => {
       if (err) throw err;
-      res.cookie('token', token).json({
-        id:userDoc._id,
+      res.cookie("token", token).json({
+        id: userDoc._id,
         username,
       });
     });
   } else {
-    res.status(400).json('wrong credentials');
+    res.status(400).json("wrong credentials");
   }
 });
 app.listen(4000);
