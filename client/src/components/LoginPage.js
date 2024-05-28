@@ -18,7 +18,7 @@ const LoginPage = () => {
     })
 
     if (response.ok) {
-      toast.success('Login Successful')
+      toast.success('Login Successful ')
       setRedirect(true)
     }else{
       toast.error('wrong credentials')
